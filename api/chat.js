@@ -43,6 +43,7 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
+    console.log("OpenAI response:", data);
     const reply = data.choices?.[0]?.message?.content || "Beklager, jeg fikk ikke noe svar fra AI-en.";
 
     res.status(200).json({ reply });
